@@ -3,7 +3,7 @@ import React, {useState} from 'react';
 const AddSongForm = ( {addSong}) => {
 
     const [title, setTitle] = useState('')
-    console.log('title :>> ', title);
+    /* console.log('title :>> ', title); */
 
    const handleSubmit = (e) => {
     console.log('tit;e ', title);
