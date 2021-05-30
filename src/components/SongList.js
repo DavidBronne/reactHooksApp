@@ -1,5 +1,6 @@
 import React , {useState} from 'react';
 /* import uuid from 'uuid/v1'; */
+import AddSongForm from './AddSongForm'
 
 
 const SongList = () => {
@@ -10,15 +11,16 @@ const SongList = () => {
         {id:3 , title:'Song3'}
     ])
 
-    const addSong = () => {
+    const addSong = (song) => {
         setSongs([...songs,
-        {id: Math.random() , title:'new Song'}])
+        {id: Math.random() , title:song}])  
     }
 
     return (
         <div className="song-list">
             <ul>{
                 songs.map( song => {
+                
                 return( 
                     <div>
                         <li key={song.id} >{song.title}</li>
@@ -26,7 +28,7 @@ const SongList = () => {
                     )
                 })}
             </ul>
-            <button onClick={addSong}>Add</button>
+            <AddSongForm addSong={addSong}/>
         </div>
     );
 }
